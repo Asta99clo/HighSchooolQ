@@ -1,7 +1,7 @@
 
-import './App.css'
-import NavBar from './Componets/layout/NavBar'
-import Hero from './Componets/layout/Hero'
+import './Base/index.scss';
+import NavBar from './Componets/NavBar/NavBar'
+import Hero from './Componets/Hero/Hero'
 
 function App() {
 
