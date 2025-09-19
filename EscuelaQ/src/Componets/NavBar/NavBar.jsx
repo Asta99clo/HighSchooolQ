@@ -1,7 +1,14 @@
+import './Navbar.scss';
 const NavBar = () =>{
     return(
         <>
-        <h1>Hola mundo</h1>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Inicio</a>
+            <a href="#">Inicio</a>
+            <a href="#">Inicio</a>
+            <a href="#">Inicio</a>
+        </nav>
         </>
     )
 

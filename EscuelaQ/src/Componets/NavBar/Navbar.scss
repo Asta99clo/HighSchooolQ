@@ -1,0 +1,11 @@
+@use '../../Base/variables' as v;
+
+nav{
+    background-color: v.$fondoHeader;
+    a{
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

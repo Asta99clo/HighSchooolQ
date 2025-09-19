@@ -3,6 +3,7 @@ const Hero = () =>{
         <>
             <p>Soy el hero</p>
             <p className="padre"></p>
+            
         </>
     )
 }
