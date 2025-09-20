@@ -1,0 +1,14 @@
+@use '../../Base/variables' as v;
+.contenedorP{
+    background-image: url(../../assets/img/secciones/seccion1.webp);
+    height: 350px;
+    background-size: cover;
+    margin: 30px;
+    border-radius: 20px;
+    h1{
+        padding-top: 130px;
+        text-align: center;
+        color: #fff; 
+        font-weight: bold;
+    }
+}
