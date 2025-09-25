@@ -1,9 +1,10 @@
 @use '../../Base/variables' as v;
 
 nav{
-    background-color: v.$colorTextoS;
-    width: 90%;
+    background-color: v.$fondoBotonP;
+    width: 100%;
     margin: auto;
+    margin-bottom: 5rem;
     
     .menuHorizontal{
         display: flex;
@@ -21,11 +22,15 @@ nav{
             >a{
                 display: block;
                 padding: 15px 20px;
-                color: #fff;
+                color: #ffffff;
+                &:hover{
+                    color: v.$colorTextoD;
+                }
             }
             transition: all 0.8s ease-in-out;
         }
         &>li:hover{
+            color: v.$colorTextoD;
             background-color: v.$fondoHover;
         }
 
@@ -38,9 +43,12 @@ nav{
             li{
                 a{
                     display: block;
-                    color: #fff;
+                    color: v.$colorTextoD;
                     font-size: 18px;
                     padding: 10px 10px 10px 10px;
+                    &:hover{
+                        color: v.$colorTextoD;
+                    }
                 }
                 &:hover{
                     background-color: v.$fondoHover;

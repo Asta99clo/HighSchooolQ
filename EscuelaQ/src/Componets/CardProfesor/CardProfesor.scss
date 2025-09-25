@@ -1,4 +1,5 @@
 @use '../../Base/variables' as v;
+@use '../../Base/mixins' as m;
 .contenedor{
     display: flex;
     flex-direction: row;
@@ -35,7 +36,9 @@
         display: grid;
         gap: 1rem;
         grid-template-columns: repeat(4,1fr);
-        
+        @include m.telefono{
+            @include m.grid(2);
+        }
         .card{
             width: 100%;
             border: 1px solid black;
