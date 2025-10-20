@@ -1,3 +1,5 @@
+@use './variables' as v;
+
 a{
     text-decoration: none;
 }
@@ -5,3 +7,38 @@ a{
 li{
     list-style: none;
 }
+.btnGlobal{
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: v.$fondoBotonP;
+    color: v.$colorTextoP; 
+    border: none;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    &:hover {
+        color: v.$colorTextoD;
+        background-color: v.$fondoHover;
+        transform: scale(1.05);
+    }
+}
+.selectPais{
+    padding: .6rem;
+    width: 41%;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 16px;
+    background-color: rgb(228, 213, 192);
+    font-weight: 800;
+}
+
+.selectPais:hover{
+    background-color: v.$fondoHover;
+    color: white;
+}
+.selectPais option{
+    letter-spacing: 1.3px;
+    background-color: rgb(228, 213, 192);
+}
+
+

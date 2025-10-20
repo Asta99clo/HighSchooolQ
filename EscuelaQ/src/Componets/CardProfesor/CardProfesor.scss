@@ -7,7 +7,7 @@
     margin: auto;
     gap: 1rem;
     height: auto;
-    position: relative;
+    
     .cont-opciones{
         width: 20%;
         border: 2px solid rgb(0, 0, 0);
@@ -32,62 +32,114 @@
         }
     }
     .cont-card{
-        width: 80%;
+        width: 100%;
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(4,1fr);
-        @include m.telefono{
-            @include m.grid(2);
-        }
+        grid-template-columns: repeat(3,1fr);
         .card{
             width: 100%;
-            border: 1px solid black;
             border-radius: 20px;
             box-shadow: 6px 7px 10px 1px;
-            height: 270px;
-            transition: all 0.3s ease-in-out;
+            height: 65vh;
+           
+            transition: all 0.8s ease-in-out;
+            /*
             &:hover{
                 //scale: 1.03;
                 border: 2px solid v.$fondoHover ;
                 box-shadow: 6px 7px 10px 1px v.$fondoHover;
             }
+                */
             .cont-info{
                 width: 100%;
                 display: flex;
-                flex-direction: row;
-                gap: 1rem;
-                .image{
+                flex-direction: column;
+                
+                .cont-img{
                     width: 100%;
-                    img{
-                        padding: 10px;
-                        border-radius: 20px;
-                        width: 100%;
-                        height: 150px;
-                    }
-                }
-                .info{
-                    width: 70%;
-                }
-            }
-            .cont-btn{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .btn{
-                    width: 100px;
-                    height: 40px;
-                    border-radius: 20px;
                     background-color: v.$fondoBotonP;
-                    font-size: 20px;
-                    color: white;
-                    border: none;
-                    cursor: pointer;
-
-                    &:hover{
-                        background-color: v.$fondoHover;
+                    border-radius: 10px;
+                    .image{
+                        width:  100%;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            margin-bottom: 1rem;
+                            margin-top: 1rem;
+                            border: 3px solid white;
+                            border-radius: 100%;
+                            width: 50%;
+                            height: 150px;
+                        }
                     }
                 }
+                .contenedor-inf {
+                        perspective: 1000px; // profundidad
+                        flex: 1; // ocupa espacio restante de la card
+                        .flip-card {
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                                transform-style: preserve-3d;
+                                transition: transform 1s ease;
+
+                            &.flipped {
+                                transform: rotateY(180deg);
+                            }
+
+                        .flip-card-inner {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            transform-style: preserve-3d;
+                            
+                        }
+
+                            .flip-card-front,
+                            .flip-card-back {
+                                position: absolute;
+                                width: 100%;
+                                backface-visibility: hidden;
+                                border-radius: 10px;
+                                border: 2px solid;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            .flip-card-front {
+                                background-color: white;
+                                height: 35vh;
+                        }            
+                        .flip-card-back {
+                                background-color: white;
+                                color: rgb(0, 0, 0);
+                                transform: rotateY(180deg);
+                                height: 35vh;
+                            }
+                        }
+                    }
             }
+        }
+    }
+}
+.cont-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn{
+        background-color: v.$fondoBotonP;
+        border-radius: 10px;
+        border: none;
+        width: 20%;
+        font-weight: 900;
+        color: white;
+        padding: .8rem;
+        &:hover{
+            background: v.$fondoHover
         }
     }
 }
