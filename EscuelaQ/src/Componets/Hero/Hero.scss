@@ -1,0 +1,132 @@
+@use '../../Base/variables' as v;
+
+// 1. ANIMACIÓN DE ENTRADA (Sutil y profesional)
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); // Un movimiento más corto y rápido
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 2. EL CONTENEDOR PRINCIPAL
+.hero-contenedor {
+  width: 100%;
+  min-height: 80vh;
+  // Aumentamos el padding para más "espacio de lujo"
+  padding: 40px 8%; 
+  box-sizing: border-box;
+
+  display: grid;
+  // Mantenemos la asimetría que te gustó
+  grid-template-columns: 1.5fr 1fr; 
+  align-items: center; 
+  gap: 4rem; // Más espacio entre columnas
+
+  // --- Paleta de Colores "Seria" ---
+  background-color: v.$colorTextoP; // #ffffff (Blanco)
+  color: v.$colorTextoD;           // #000000 (Negro)
+  overflow: hidden; // Importante para las animaciones
+}
+
+// 3. LA COLUMNA DE TEXTO
+.hero-texto {
+  text-align: left;
+  position: relative; // Necesario para nuestro acento
+  
+  // --- ¡INNOVACIÓN "SERIA": LÍNEA DE ACENTO! ---
+  // Este es el detalle de diseño que reemplaza al "blob"
+  &::before {
+    content: "";
+    position: absolute;
+    left: -2rem; // Se posiciona a la izquierda del texto
+    top: 0.5rem; // Alineado con la parte de arriba del H1
+    bottom: 0.5rem;
+    width: 4px;
+    
+    // --- Usamos tu color de acento ---
+    background-color: v.$fondoHeader; // #2ec4b6 (Turquesa)
+    
+    // Animación de la línea (crece verticalmente)
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: growLine 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+  }
+  
+  @keyframes growLine {
+    to { transform: scaleY(1); }
+  }
+  
+  h1 {
+    font-size: 3.8rem;
+    // Un peso "bold" (700) es más refinado que "extrabold" (800)
+    font-weight: 700; 
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+    color: v.$colorTextoD; // Negro sólido. Fuerte.
+    
+    opacity: 0; 
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+  }
+
+  p {
+    font-size: 1.2rem;            
+    margin: 0 0 3rem; // Más espacio
+    line-height: 1.7; // Más espaciado de línea para legibilidad
+    
+    // --- Usamos tu color secundario ---
+    color: v.$colorTextoS; // #777777 (Gris)
+    max-width: 55ch; // Buena legibilidad
+    
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.6s forwards;
+  }
+
+  .hero-boton {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px; // Un radio profesional, no un círculo
+    transition: all 0.2s ease-in-out;
+    
+    // --- Botón "Premium" (Alto Contraste) ---
+    background-color: v.$colorTextoD; // #000000 (Negro)
+    color: v.$colorTextoP;           // #ffffff (Blanco)
+    border: 2px solid v.$colorTextoSdegradado;
+    
+    &:hover {
+      // --- Usamos tus colores de hover ---
+      background-color: v.$fondoHover; // #ffd166 (Amarillo)
+      border-color: v.$fondoHover;
+      color: v.$colorTextoD;           // Texto negro sobre amarillo
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(v.$fondoHover, 0.4);
+    }
+    
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.8s forwards;
+  }
+}
+
+// 4. LA COLUMNA DE IMAGEN
+.hero-imagen-contenedor {
+  width: 100%;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    
+    // --- Diseño Profesional ---
+    border-radius: 12px; // Radio sutil y profesional
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); // Sombra refinada
+    // Eliminamos la animación de "flotación"
+  }
+}
