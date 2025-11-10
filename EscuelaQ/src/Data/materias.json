@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "Clave": "ING101",
+        "NombreMateria": "Inglés I",
+        "Descripción": "Curso básico-intermedio de inglés, centrado en gramática y conversación.",
+        "ProfesorImparte": "Mariana Castillo Torres",
+        "País": "Argentina",
+        "Tipo": "En línea",
+        "Ciencia": "Lingüística",
+        "Precio": 2500,
+        "Duración": "6 meses"
+    },
+    {
+        "id": 2,
+        "Clave": "ESP110",
+        "NombreMateria": "Redacción y Ortografía",
+        "Descripción": "Taller práctico para mejorar escritura, estilo y ortografía en español.",
+        "ProfesorImparte": "Lucia Ramírez Díaz",
+        "País": "Argentina",
+        "Tipo": "Presencial",
+        "Ciencia": "Lingüística",
+        "Precio": 3000,
+        "Duración": "6 meses"
+    },
+    {
+        "id": 3,
+        "Clave": "PRO320",
+        "NombreMateria": "Programación Concurrente",
+        "Descripción": "Principios de programación con hilos, procesos y sincronización.",
+        "ProfesorImparte": "Eduardo Fernández Cruz",
+        "País": "México",
+        "Tipo": "En línea",
+        "Ciencia": "Ciencias de la Computación",
+        "Precio": 6000,
+        "Duración": "5 meses"
+    },
+    {
+        "id": 4,
+        "Clave": "IA400",
+        "NombreMateria": "Inteligencia Artificial (IA)",
+        "Descripción": "Introducción a machine learning, redes neuronales y algoritmos inteligentes.",
+        "ProfesorImparte": "Eduardo Fernández Cruz",
+        "País": "México",
+        "Tipo": "Presencial",
+        "Ciencia": "Ciencias de la Computación",
+        "Precio": 8000,
+        "Duración": "8 meses"
+    },
+    {
+        "id": 5,
+        "Clave": "BDR210",
+        "NombreMateria": "BD Relacionales",
+        "Descripción": "Curso de SQL, modelado de datos y normalización.",
+        "ProfesorImparte": "Eduardo Fernández Cruz",
+        "País": "México",
+        "Tipo": "En línea",
+        "Ciencia": "Ciencias de la Computación",
+        "Precio": 5000,
+        "Duración": "6 meses"
+    },
+    {
+        "id": 6,
+        "Clave": "BDN220",
+        "NombreMateria": "BD No Relacionales",
+        "Descripción": "MongoDB, Redis y sistemas NoSQL para grandes volúmenes de datos.",
+        "ProfesorImparte": "Eduardo Fernández Cruz",
+        "País": "México",
+        "Tipo": "En línea",
+        "Ciencia": "Ciencias de la Computación",
+        "Precio": 7000,
+        "Duración": "7 meses"
+    },
+    {
+        "id": 7,
+        "Clave": "MAT150",
+        "NombreMateria": "Matemáticas Discretas I",
+        "Descripción": "Conjuntos, lógica proposicional, funciones y relaciones.",
+        "ProfesorImparte": "Patricia González Herrera",
+        "País": "Perú",
+        "Tipo": "Presencial",
+        "Ciencia": "Ciencias Exactas",
+        "Precio": 1700,
+        "Duración": "3 meses"
+    },
+    {
+        "id": 8,
+        "Clave": "MAT250",
+        "NombreMateria": "Matemáticas Discretas II",
+        "Descripción": "Grafos, teoría de la complejidad y álgebra booleana.",
+        "ProfesorImparte": "Patricia González Herrera",
+        "País": "Perú",
+        "Tipo": "Presencial",
+        "Ciencia": "Ciencias Exactas",
+        "Precio": 2000,
+        "Duración": "4 meses"
+    },
+    {
+        "id": 9,
+        "Clave": "DW101",
+        "NombreMateria": "Diseño Web",
+        "Descripción": "HTML, CSS y fundamentos de diseño responsivo.",
+        "ProfesorImparte": "José Ramírez Ortega",
+        "País": "Puerto Rico",
+        "Tipo": "En línea",
+        "Ciencia": "Ciencias de la Computación",
+        "Precio": 3200,
+        "Duración": "4 meses"
+    },
+    {
+        "id": 10,
+        "Clave": "UX101",
+        "NombreMateria": "Diseño UI/UX",
+        "Descripción": "Principios de diseño de interfaces, accesibilidad y usabilidad.",
+        "ProfesorImparte": "José Ramírez Ortega",
+        "País": "Puerto Rico",
+        "Tipo": "En línea",
+        "Ciencia": "Interacción Humano-PC",
+        "Precio": 4200,
+        "Duración": "3 meses"
+    }
+]

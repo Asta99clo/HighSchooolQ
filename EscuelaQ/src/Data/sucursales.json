@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "NombreSucursal": "Sucursal Santiago Centro",
+        "Dirección": "Av. Libertador Bernardo O’Higgins 1234",
+        "País": "Chile"
+    },
+    {
+        "id": 2,
+        "NombreSucursal": "Sucursal Lima Norte",
+        "Dirección": "Av. Universitaria 890, San Martín de Porres",
+        "País": "Perú"
+    },
+    {
+        "id": 3,
+        "NombreSucursal": "Sucursal Toronto Downtown",
+        "Dirección": "55 Bay Street, Financial District",
+        "País": "Canadá"
+    },
+    {
+        "id": 4,
+        "NombreSucursal": "Sucursal San Juan Centro",
+        "Dirección": "Av. Ponce de León 345, Santurce",
+        "País": "Puerto Rico"
+    },
+    {
+        "id": 5,
+        "NombreSucursal": "Sucursal Brno Universitaria",
+        "Dirección": "Kounicova 150, Brno",
+        "País": "República Checa"
+    }
+]
