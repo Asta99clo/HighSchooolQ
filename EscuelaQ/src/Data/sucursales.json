@@ -3,30 +3,55 @@
         "id": 1,
         "NombreSucursal": "Sucursal Santiago Centro",
         "Dirección": "Av. Libertador Bernardo O’Higgins 1234",
-        "País": "Chile"
+        "País": "Chile",
+        "codigoPais": "cl",
+        "Correo": "santiago@edumai.com",
+        "Teléfono": "+56 2 5555 5555",
+        "img": ["/assets/img/Sucursales/chile.webp","/assets/img/Sucursales/chileE.webp", "/assets/img/Sucursales/chileS.webp" ],
+        "alt": "Sucursal Santiago Centro en Chile"
     },
     {
         "id": 2,
         "NombreSucursal": "Sucursal Lima Norte",
         "Dirección": "Av. Universitaria 890, San Martín de Porres",
-        "País": "Perú"
+        "País": "Perú",
+        "codigoPais": "pe",
+        "Correo": "lima@edumai.com",
+        "Teléfono": "+51 1 555 5555",
+        "img": ["/assets/img/Sucursales/peru.webp", "/assets/img/Sucursales/peruE.webp", "/assets/img/Sucursales/peruS.webp"],
+        "alt": "Sucursal Lima Norte en Perú"
     },
     {
         "id": 3,
         "NombreSucursal": "Sucursal Toronto Downtown",
         "Dirección": "55 Bay Street, Financial District",
-        "País": "Canadá"
+        "País": "Canadá",
+        "codigoPais": "ca",
+        "Correo": "toronto@edumai.com",
+        "Teléfono": "+1 416 555 0123",
+        "img": ["/assets/img/Sucursales/canada.webp", "/assets/img/Sucursales/canadaE.webp", "/assets/img/Sucursales/canadaS.webp"],
+        "alt": "Sucursal Toronto Downtown en Canadá"
     },
     {
         "id": 4,
         "NombreSucursal": "Sucursal San Juan Centro",
         "Dirección": "Av. Ponce de León 345, Santurce",
-        "País": "Puerto Rico"
+        "País": "Puerto Rico",
+        "codigoPais": "pr",
+        "Correo": "sanjuan@edumai.com",
+        "Teléfono": "+1 787 555 9876",
+        "img": ["/assets/img/Sucursales/puertoRico.webp", "/assets/img/Sucursales/puertoRicoE.webp","/assets/img/Sucursales/puertoRicoS.webp"],
+        "alt": "Sucursal San Juan Centro en Puerto Rico"
     },
     {
         "id": 5,
         "NombreSucursal": "Sucursal Brno Universitaria",
         "Dirección": "Kounicova 150, Brno",
-        "País": "República Checa"
+        "País": "República Checa",
+        "codigoPais": "cz",
+        "Correo": "brno@edumai.com",
+        "Teléfono": "+420 555 555 555",
+        "img": ["/assets/img/Sucursales/republicaCheca.webp","/assets/img/Sucursales/republicaChecaE.webp","/assets/img/Sucursales/republicaChecaS.webp"],
+        "alt": "Sucursal Brno Universitaria en República Checa"
     }
 ]
