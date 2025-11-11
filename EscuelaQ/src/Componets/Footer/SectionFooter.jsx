@@ -4,8 +4,8 @@ const SectionFooter= () =>{
         <>
         <section className="cont-footer">
             <div className="cabecera">
-               <p className='muestra'>p</p>
-                <hr />
+                <p className='muestra'></p>
+                
                 <div className="redes">
                     <a href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
@@ -40,9 +40,9 @@ const SectionFooter= () =>{
                     <p>Todos los derechos reservados a <span>PINACOMP.</span></p>
                 </div>
                 <div className="info-der">
-                    <p>Pais</p>
+                    <p>México</p>
                     <p>Dirección</p>
-                    <p>Teléfono</p>
+                    <p>5516303032</p>
                 </div>
             </div>
 

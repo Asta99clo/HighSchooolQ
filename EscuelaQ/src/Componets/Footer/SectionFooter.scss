@@ -1,80 +1,91 @@
 @use '../../Base/variables' as v;
+@use "sass:color";
 .cont-footer{
-    background: v.$fondoHeader;
+    background: color.scale(v.$fondoHeader, $lightness:-15%);
+    box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.25);
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    margin-top: 1rem;
     .cabecera{
         position: relative;
-        p{
-            color: v.$fondoHeader;
-        }
-        hr{
-            margin-top: 2rem;
-            color: v.$fondoBotonP;
-        }
+        text-align: center;
         .redes{
-            position: absolute;
-            top: 60%;
-            left: 45%;
-            background-color: v.$fondoHeader;
+            position: static;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
             display: flex;
-            gap: 1rem;
+            flex-direction: row;
             a{
                 border-radius: 10px;
                 border: 2px solid v.$fondoBotonP;
-                padding: 10px;
+                padding: 12px;
+                transition: all 0.3s ease;
+                background-color: transparent;
                 svg{
+                    
                     color: white;
                     width: 20px;
                     height: 20px;
+                    transition: color 0.3s ease;
                 }
                 &:hover{
                     background-color: v.$fondoBotonP;
+                    svg {
+                        color: v.$fondoHeader;
+                    }
                 }
             }
         }
     }
     .pie{
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            text-align: left;
         
         .info-izq{
             display: flex;
             flex-direction: column;
-            margin-left: 5%;
             a{
                 color: white;
                 padding: 5px;
                 font-size: 18px;
                 font-weight: 700;
                 &:hover{
-                    color: v.$fondoBotonP;
+                    
+                    text-decoration:  2px underline  v.$fondoBotonP;
                 }
             }
         }
         .info-central{
-            margin-top: 1rem;
-            font-size: 16px;
+            margin-top: .5rem;
+            font-size: 18px;
             color: white;
             font-weight: 700;
+            text-align: center;
             span{
                 color: v.$fondoBotonP;
                 font-weight: 900;
             }
         }
-        .info-der{
-            display: flex;
-            flex-direction: column;
-            margin-right: 5%;
-            margin-bottom: 1rem;
+        .info-der{ 
+            display: flex; 
+            flex-direction: column; 
+            
+            margin-bottom: 1rem; 
             p{
-                margin:0;
-                color: white;
-                font-weight: 700;
-                padding: 5px;
+                margin:0; 
                 font-size: 18px;
+                color: white; 
+                font-weight: 700; 
+                padding: 5px; 
+                font-size: 18px; 
             }
         }
+        
     }
 
 }

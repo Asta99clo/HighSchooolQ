@@ -37,7 +37,7 @@ const SeccionSucursal = () =>{
 
     return(
         <>
-            <section className='section-sucursal'>
+            <section className='section-sucursal' id='sucursales'>
                 <div className="titulo">
                     <h1>Nuestras sucursales</h1>
                     <h3>Aprendizaje sin fronteras</h3>
@@ -82,9 +82,9 @@ const SeccionSucursal = () =>{
                                     <>
                                         <h2>{sucursalActiva.país}</h2>
                                         <h2>{sucursalActiva.NombreSucursal}</h2>
-                                        <p>{sucursalActiva.Dirección}</p>
-                                        <p>{sucursalActiva.Correo}</p>
-                                        <p>{sucursalActiva.Teléfono}</p>
+                                        <p><span>Dirección: </span>{sucursalActiva.Dirección}</p>
+                                        <p><span>Correo: </span> {sucursalActiva.Correo}</p>
+                                        <p><span>Teléfono: </span>{sucursalActiva.Teléfono}</p>
                                         <button>Inscribirse</button>
                                     </>
                                 ):(

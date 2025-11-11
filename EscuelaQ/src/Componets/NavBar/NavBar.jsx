@@ -31,7 +31,7 @@ const NavBar = () => {
           </li>
           <li><a href="#">Sobre nosotros</a></li>
           <li>
-            <a href="#">Planteles</a>
+            <a href="#sucursales">Planteles</a>
             <ul className="menuVertical">
               <li><a href="#">México</a></li>
               <li><a href="#">Puerto Rico</a></li>

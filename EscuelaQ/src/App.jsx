@@ -6,6 +6,7 @@ import SeccionProfesor from './Componets/ProfesoresSeccion/SeccionProfesor';
 import CardProfesor from './Componets/CardProfesor/CardProfesor';
 import Cardcursos from './Componets/Cardcursos/Cardcursos';
 import SeccionSucursal from './Componets/Sucursales/SeccionSucursal';
+import SectionFooter from './Componets/Footer/SectionFooter';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <CardProfesor/>
       <Cardcursos/>
       <SeccionSucursal/>
+      <SectionFooter/>
     </>
   )
 }
