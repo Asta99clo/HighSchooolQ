@@ -1,5 +1,6 @@
 import { useState } from 'react'; // <-- 1. ¡IMPORTANTE!
 import './Navbar.scss';
+import { useNavigate } from "react-router-dom";
 // (No necesitas importar la imagen del hero aquí)
 
 // import logo from '../../assets/img/logo.svg'; 
@@ -7,6 +8,7 @@ import './Navbar.scss';
 const NavBar = () => {
   // --- 2. EL ESTADO PARA EL TOGGLE ---
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const navigate = useNavigate();
 
   // --- 3. LA FUNCIÓN QUE CAMBIA EL ESTADO ---
   const handleToggle = () => {
@@ -53,7 +55,7 @@ const NavBar = () => {
 
         {/* --- ACCIONES --- */}
         <div className="nav-actions">
-          <button className="btn-secondary">
+          <button className="btn-secondary" onClick={()  => navigate("/InicioSesion")}>
             Iniciar sesión
           </button>
           
