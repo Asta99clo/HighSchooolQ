@@ -1,10 +1,11 @@
 import './SeccionSucursal.scss';
 import React, {useState, useEffect} from 'react';
 import sucursales from "../../Data/sucursales.json";
+import { useNavigate } from "react-router-dom";
 
 
 const SeccionSucursal = () =>{
-
+    const navigate = useNavigate();
     //estados de react
     const [data , setData] = useState([]);
     const [paisSeleccionado, setPaisSeleccionado] = useState("cl");
@@ -85,7 +86,7 @@ const SeccionSucursal = () =>{
                                         <p><span>Dirección: </span>{sucursalActiva.Dirección}</p>
                                         <p><span>Correo: </span> {sucursalActiva.Correo}</p>
                                         <p><span>Teléfono: </span>{sucursalActiva.Teléfono}</p>
-                                        <button>Inscribirse</button>
+                                        <button onClick={()=>navigate("/InicioSesion")}>Inscribirse</button>
                                     </>
                                 ):(
                                     <p>Selecciona un país para ver sus datos</p>
