@@ -85,7 +85,7 @@
     font-weight: 700;
     color: v.$colorTextoD;
     
-    svg {
+    .navbar-logo {
       color: v.$fondoHeader; // Turquesa
       margin-right: 0.5rem;
       width: 28px;
@@ -204,7 +204,7 @@
       align-items: center;
       justify-content: center;
       z-index: 2;
-      svg {
+      .navbar-logo {
         width: 14px;
         height: 14px;
         color: v.$colorTextoP; // Blancos (para verse sobre el círculo)
@@ -220,8 +220,8 @@
         background-color: v.$fondoHeader; // Turquesa
       }
 
-      .icon-sun svg { color: v.$colorTextoD; } // Sol apagado
-      .icon-moon svg { color: v.$colorTextoP; } // Luna encendida
+      .icon-sun, .navbar-logo { color: v.$colorTextoD; } // Sol apagado
+      .icon-moon, .navbar-logo { color: v.$colorTextoP; } // Luna encendida
     }
   }
 }
