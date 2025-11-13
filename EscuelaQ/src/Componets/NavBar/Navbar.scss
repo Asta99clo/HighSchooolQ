@@ -1,26 +1,18 @@
 @use '../../Base/variables' as v;
 
-// 1. EL CONTENEDOR PRINCIPAL (¡CON EFECTO GLASSMORPHISM!)
+
+// el estilo principal del header
 .main-header {
   width: 100%;
-  
-  // --- ¡AQUÍ ESTÁ LA MAGIA! ---
-  // Hacemos el fondo blanco con 80% de opacidad
   background-color: rgba(v.$colorTextoP, 0.8); 
-  
-  // ¡El desenfoque!
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); // Para Safari
-  
-  // Un borde sutil que se adapta a la transparencia
+    backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(v.$colorTextoD, 0.05); 
-  
   position: sticky; 
   top: 0;
   z-index: 1000;
 }
-
-// 2. EL CONTENEDOR DE NAVEGACIÓN INTERNO
+// nav principal
 .main-nav {
   width: 100%;
   max-width: 1600px;
@@ -33,7 +25,7 @@
   align-items: center;
 }
 
-// 3. LA LISTA DE ENLACES
+// enlaces
 .nav-links {
   display: flex;
   align-items: center;
@@ -57,7 +49,7 @@
       color: v.$colorTextoS;
       transition: color 0.2s ease-in-out;
 
-      // La línea de acento sutil
+      // La línea de acento
       &::after {
         content: "";
         position: absolute;
@@ -66,7 +58,7 @@
         transform: translateX(-50%);
         width: 0%;
         height: 3px;
-        background-color: v.$fondoHeader; // Turquesa
+        background-color: v.$fondoHeader; 
         transition: width 0.3s ease;
       }
 
@@ -86,7 +78,7 @@
     color: v.$colorTextoD;
     
     .navbar-logo {
-      color: v.$fondoHeader; // Turquesa
+      color: v.$fondoHeader; 
       margin-right: 0.5rem;
       width: 28px;
       height: 28px;
@@ -97,13 +89,13 @@
   }
 }
 
-// 4. EL MENÚ DROPDOWN
+// el menu estilo dropdown
 .menuVertical {
   position: absolute;
   top: 100%;
   left: 0;
   
-  // ¡EFECTO GLASS TAMBIÉN EN EL DROPDOWN!
+  // el mismo estilo tipo glass tambien
   background-color: rgba(v.$colorTextoP, 0.8); 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -133,7 +125,7 @@
 
       &:hover {
         color: v.$colorTextoD;
-        background-color: rgba(v.$fondoHover, 0.2); // Amarillo
+        background-color: rgba(v.$fondoHover, 0.2);
       }
     }
   }
@@ -145,7 +137,7 @@
   transform: translateY(0);
 }
 
-// 5. LAS ACCIONES
+// las acciones del navbar
 .nav-actions {
   display: flex;
   align-items: center;
@@ -159,7 +151,7 @@
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     background-color: transparent;
-    border: 2px solid v.$fondoHeader; // Turquesa
+    border: 2px solid v.$fondoHeader; 
     color: v.$fondoHeader;
 
     &:hover {
@@ -168,16 +160,15 @@
     }
   }
   
-  // --- ¡EL NUEVO TOGGLE PREMIUM! ---
+  // el estilo del toggle
   .btn-toggle {
-    // El contenedor
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 65px;
     height: 32px;
-    background-color: #eee; // Fondo gris claro
+    background-color: #eee;
     border: none;
     border-radius: 50px;
     padding: 0 6px;
@@ -192,7 +183,7 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      background-color: v.$fondoHover; // Amarillo
+      background-color: v.$fondoHover; 
       box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
       z-index: 1;
@@ -211,13 +202,13 @@
       }
     }
     
-    // --- ESTADO ACTIVO (MODO OSCURO) ---
+    // el estilo del estado modo oscuro activo
     &.active {
-      background-color: v.$fondoBotonS; // Morado
+      background-color: v.$fondoBotonS; 
       
       .toggle-slider {
-        transform: translateX(31px); // Se desliza
-        background-color: v.$fondoHeader; // Turquesa
+        transform: translateX(31px);
+        background-color: v.$fondoHeader; 
       }
 
       .icon-sun, .navbar-logo { color: v.$colorTextoD; } // Sol apagado
