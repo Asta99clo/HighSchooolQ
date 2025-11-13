@@ -1,13 +1,17 @@
+
+import { useNavigate } from "react-router-dom";
 import FormAlumn from "../formAlumn/FormAlumn";
 import NavBar from "../NavBar/NavBar";
 import './InicioSesion.scss'
 const InicioSesion = () =>{
+        const navigate = useNavigate();
+    
     return (
         <>
         <NavBar></NavBar>
         <section className="cont-from">
             <div className="cont-avatar">
-                <div className="alumno">
+                <div className="alumno" onClick={() => navigate("/FormAlumn")}>
                     <div className="img">
                         <img src="/assets/img/secciones/imgAlum.webp" alt="" />
                     </div>

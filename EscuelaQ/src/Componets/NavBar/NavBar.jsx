@@ -57,7 +57,7 @@ const NavBar = () => {
 
         {/* --- ACCIONES --- */}
         <div className="nav-actions">
-          <button className="btn-secondary" onClick={()  => navigate("/InicioSesion")}>
+          <button className="btn-secondary" onClick={()  => navigate("/Login")}>
             Iniciar sesión
           </button>
           
