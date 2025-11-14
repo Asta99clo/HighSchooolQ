@@ -1,0 +1,249 @@
+// src/Componets/CardProfesorItem/CardProfesorItem.scss
+@use '../../Base/variables' as v;
+@use 'sass:color';
+
+// --- Mixins Reutilizables ---
+
+/**
+ * Mixin para el efecto "glassmorphism".
+ * Centraliza los prefijos de navegador y las propiedades comunes.
+ */
+@mixin glass-effect($bg-color, $border-color, $blur: 12px) {
+  background-color: $bg-color;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur); // Prefijo para Safari
+  border: 1px solid $border-color;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+
+
+// --- Estructura del Componente ---
+
+.profesor-card-container {
+  //min-height: 450px; 
+  height: 450px;
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards; 
+}
+
+.profesor-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+
+  // Lógica de estado centralizada
+  &.is-flipped {
+    transform: rotateY(180deg);
+    
+    // Dispara las animaciones de la cara trasera SOLO cuando está volteada
+    // Esto es mucho más limpio que el selector complejo anterior.
+    .card-back {
+      &__header {
+        animation: fadeInUp 0.4s ease-out 0.3s forwards;
+      }
+      &__bio-wrapper {
+        animation: fadeInUp 0.4s ease-out 0.4s forwards;
+      }
+      &__socials {
+        animation: fadeInUp 0.4s ease-out 0.5s forwards;
+      }
+      .btn-back { // .btn-back no es un BEM estricto, así que lo dejamos
+        animation: fadeInUp 0.4s ease-out 0.6s forwards;
+      }
+    }
+  }
+}
+
+// --- Caras (Frontal y Trasera) ---
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; // Oculta la cara cuando está "detrás"
+  border-radius: 12px; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+  
+  // Se aplica el efecto de cristal base a AMBAS caras
+  @include glass-effect(
+    rgba(v.$colorTextoP, 0.2), 
+    rgba(v.$colorTextoP, 0.3)
+  );
+}
+
+.card-front {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+
+  &:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15); 
+  }
+  
+  // Usamos anidación BEM (Bloque__Elemento) para legibilidad
+  &__imagen-cont {
+    width: 100%;
+    height: 200px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0; 
+    }
+  }
+
+  &__info-cont {
+    padding: 1.25rem;
+    flex-grow: 1; 
+    
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: v.$colorTextoD;
+      margin: 0 0 0.25rem;
+    }
+    .materia {
+      font-size: 1rem;
+      font-weight: 600;
+      color: v.$fondoHeader;
+      margin: 0 0 0.5rem;
+    }
+    .grado {
+      font-size: 0.9rem;
+      color: v.$colorTextoS;
+      margin: 0;
+    }
+  }
+
+  &__btn-cont {
+    padding: 0 1.25rem 1.25rem;
+    
+    .btn-secondary {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.2s ease-in-out;
+      background-color: transparent;
+      border: 2px solid v.$fondoHeader; 
+      color: v.$fondoHeader;
+
+      &:hover {
+        background-color: v.$fondoHeader;
+        color: v.$colorTextoP;
+      }
+    }
+  }
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  color: v.$colorTextoD;
+  justify-content: space-between; 
+  box-sizing: border-box;
+
+  // ¡MEJORA! Se eliminaron 5 líneas redundantes (bg, filter, border, shadow)
+  // que ya estaban definidas en .card-face.
+  // Solo sobreescribimos el fondo específico para la cara trasera.
+  @include glass-effect(
+    rgba(v.$fondoHover, 0.2), 
+    rgba(v.$fondoHover, 0.3)
+  );
+  
+  // Elementos internos de la cara trasera
+  &__header,
+  &__bio-wrapper,
+  &__socials,
+  .btn-back {
+    opacity: 0; // Estado inicial para la animación
+  }
+
+  &__header {
+    background-color: v.$fondoHeader;
+    padding: 1.25rem;
+    border-radius: 12px 12px 0 0; 
+    
+    h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: v.$colorTextoP; 
+      margin: 0;
+    }
+  }
+
+  &__bio-wrapper {
+    padding: 1.5rem 1.25rem; 
+    flex-grow: 1; 
+    display: flex; 
+    gap: 0.75rem;
+
+    .quote-icon {
+      flex-shrink: 0; 
+      color: rgba(v.$colorTextoD, 0.4); 
+      margin-top: 0.25rem;
+      font-size: 1.6rem; 
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: v.$colorTextoD; 
+      line-height: 1.7; 
+      margin: 0;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(v.$colorTextoD, 0.1); 
+    margin: 0 1.25rem;
+    padding-top: 1rem;
+
+    a {
+      color: v.$colorTextoS; 
+      transition: color 0.2s ease;
+      
+      svg {
+        width: 22px; 
+        height: 22px;
+      }
+      
+      &:hover {
+        color: v.$fondoHeader;
+      }
+    }
+  }
+  
+  .btn-back {
+    background: v.$fondoHeader; 
+    color: v.$colorTextoP; 
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.8rem 1.25rem; 
+    margin: 1.25rem; 
+    align-self: center; 
+    border: none;
+    border-radius: 8px; 
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &::before {
+      content: "←"; 
+      margin-right: 0.5rem;
+      font-weight: 700;
+    }
+    
+    &:hover {
+      background-color: color.adjust(v.$fondoHeader, $lightness: -10%);
+      transform: translateY(-2px); 
+    }
+  }
+}
