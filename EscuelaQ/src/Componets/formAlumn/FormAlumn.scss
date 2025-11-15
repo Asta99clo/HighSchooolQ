@@ -1,15 +1,14 @@
 @use '../../Base/variables' as v;
 
-.cont-form{
+.cont-form {
     width: 100%;
-    height: 120vh;
+    min-height: 120vh;
     background-image: url(../../assets/img/secciones/seccion3.webp);
     background-size: cover;
-    display: flex;               // <--- hace que los hijos sean flex
-    justify-content: center;     // <--- centra horizontalmente
-    align-items: center;  
-    .form-alumn{
-        
+    display: flex; // <--- hace que los hijos sean flex
+    justify-content: center; // <--- centra horizontalmente
+    align-items: center;
+    .form-alumn {
         width: 35%;
         height: 75%;
         display: flex;
@@ -18,45 +17,64 @@
         align-items: center;
         border: 3px solid rgba(128, 128, 128, 0.405);
         border-radius: 16px;
-        
+
         backdrop-filter: blur(50px);
         padding: 1rem;
-        h3{
-            color: white;
-            margin: 0;
-            padding: 0;
+        h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
         }
-        .formulario{
+        .formulario {
+            width: 80%;
             display: flex;
             flex-direction: column;
-            label{
-                color: v.$colorTextoD;
-                font-weight: 800;
-                margin-bottom: .3rem;
-                margin-top: .3rem;
+            gap: 0.5rem;
+            label {
+                color: #ffffffd8;
+                font-weight: 700;
+                font-size: 0.95rem;
+                margin-left: 0.2rem;
             }
-            input{
-                padding: .3rem;
-                border-radius: 8px;
-                background-color: rgb(228, 213, 192);
-                border: 1px solid black;
+            input,
+            select {
                 width: 100%;
+                padding: 0.7rem 1rem;
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                background: rgba(255, 255, 255, 0.35);
+                color: #000;
+                font-size: 1rem;
+                transition: 0.25s ease;
+
+                &:focus {
+                    border-color: #00ffd5;
+                    background: rgba(255, 255, 255, 0.55);
+                    box-shadow: 0 0 10px rgba(0, 255, 213, 0.35);
+                    outline: none;
+                }
             }
-            .info-password{
+            .selectPais {
+                width: 108%;
+            }
+            .info-password {
+                color: #ffffffc7;
+                font-size: 1rem;
                 text-align: center;
-                margin: 0;
             }
-            .seguridadP{
-                color: white;
+            .seguridadP {
+                color: #ffffffc7;
+                font-size: 1rem;
+                text-align: center;
             }
-            .btnForm{
+            .btnForm {
                 margin-top: 1rem;
                 margin-left: 23%;
                 width: 53%;
-                padding: .5rem;
+                padding: 0.5rem;
             }
-            
-
         }
     }
 }
