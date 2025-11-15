@@ -1,38 +1,55 @@
 @use '../../Base/variables' as v;
 @use "sass:color";
+
 .cont-footer{
-    background: color.scale(v.$fondoHeader, $lightness:-15%);
-    box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.25);
-    padding-top: 1rem;
-    padding-bottom: .5rem;
-    margin-top: 1rem;
+    background: rgba(v.$colorTextoP, 0.8);
+    border-top: 1px solid rgba(v.$fondoHeader, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03);
+    
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    margin-top: 4rem;
+
     .cabecera{
         position: relative;
         text-align: center;
+        margin-bottom: 1.5rem;
+
         .redes{
             position: static;
             justify-content: center;
             align-items: center;
-            gap: .5rem;
+            gap: 1rem;
             display: flex;
             flex-direction: row;
             a{
-                border-radius: 10px;
-                border: 2px solid v.$fondoBotonP;
-                padding: 12px;
+                border-radius: 50%;
+                border: 2px solid rgba(v.$colorTextoS, 0.3);
+                padding: 10px;
                 transition: all 0.3s ease;
                 background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+
                 svg{
-                    
-                    color: white;
-                    width: 20px;
-                    height: 20px;
+                    color: v.$colorTextoS;
+                    width: 18px;
+                    height: 18px;
                     transition: color 0.3s ease;
                 }
                 &:hover{
-                    background-color: v.$fondoBotonP;
+                    background-color: v.$fondoHeader;
+                    border-color: v.$fondoHeader;
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(v.$fondoHeader, 0.3);
+
                     svg {
-                        color: v.$fondoHeader;
+                        color: v.$colorTextoP;
                     }
                 }
             }
@@ -43,46 +60,60 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            padding: 0 5%;
+            padding: 1rem 8%;
             text-align: left;
+            border-top: 1px solid rgba(v.$colorTextoS, 0.1);
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
         
         .info-izq{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            gap: 1.5rem;
+            
             a{
-                color: white;
+                color: v.$colorTextoS;
                 padding: 5px;
-                font-size: 18px;
-                font-weight: 700;
+                font-size: 0.95rem;
+                font-weight: 600;
+                text-decoration: none;
+                transition: color 0.2s ease;
+
                 &:hover{
-                    
-                    text-decoration:  2px underline  v.$fondoBotonP;
+                    color: v.$fondoHeader;
                 }
             }
         }
         .info-central{
             margin-top: .5rem;
-            font-size: 18px;
-            color: white;
-            font-weight: 700;
+            font-size: 0.9rem;
+            color: v.$colorTextoS;
+            font-weight: 500;
             text-align: center;
+            p{ margin: 0; }
             span{
-                color: v.$fondoBotonP;
-                font-weight: 900;
+                color: v.$fondoHeader;
+                font-weight: 800;
             }
         }
         .info-der{ 
             display: flex; 
             flex-direction: column; 
-            
+            align-items: flex-end;
             margin-bottom: 1rem; 
+            
+            @media (max-width: 768px) { align-items: center; }
+
             p{
                 margin:0; 
-                font-size: 18px;
-                color: white; 
-                font-weight: 700; 
-                padding: 5px; 
-                font-size: 18px; 
+                font-size: 0.9rem;
+                color: v.$colorTextoS; 
+                font-weight: 500; 
+                padding: 2px 0; 
             }
         }
         
