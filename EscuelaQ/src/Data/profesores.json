@@ -1,99 +1,101 @@
 {
-  "profesoresData": [
-    {
-      "id": 1,
-      "nombre": "Anna Martinez",
-      "grado": "Mestria en Matemáticas",
-      "materia": "Matemáticas, algebra, calculo",
-      "imagen": "/assets/img/Profesores/anna.webp",
-      "bio": "Apasionada por la enseñanza, siempre buscando nuevas metodologías para motivar a los alumnos."
-    },
-    {
-      "id": 2,
-      "nombre": "Carlos Hernández",
-      "grado": "Doctorado en Física",
-      "materia": "Física y mecanica elemental 1 y 2",
-      "imagen": "/assets/img/Profesores/carlosH.webp",
-      "bio": "Investigador y docente, disfruta explicar fenómenos complejos de manera sencilla."
-    },
-    {
-      "id": 3,
-      "nombre": "Lucía Ramírez",
-      "grado": "Lic. en Letras",
-      "materia": "Español y Literatura",
-      "imagen": "/assets/img/Profesores/lucia.webp",
-      "bio": "Escritora y amante de la literatura clásica y contemporánea."
-    },
-    {
-      "id": 4,
-      "nombre": "Eduardo Fernández",
-      "grado": "Ing. en Computación",
-      "materia": "Programación, Base de datos y diseño web",
-      "imagen": "/assets/img/Profesores/eduardo.webp",
-      "bio": "Desarrollador de software y profesor con interés en inteligencia artificial y robótica."
-    },
-    {
-      "id": 5,
-      "nombre": "Sofía Torres",
-      "grado": "Lic. en Biología",
-      "materia": "Biología",
-      "imagen": "/assets/img/Profesores/sofia.webp",
-      "bio": "Investigadora en biología molecular, apasionada por la naturaleza."
-    },
-    {
-      "id": 6,
-      "nombre": "Mariana Castillo",
-      "grado": "Lic. en Lenguas",
-      "materia": "Inglés",
-      "imagen": "/assets/img/Profesores/marianaCas.webp",
-      "bio": "Docente dedicada a la enseñanza del inglés con dinámicas innovadoras y divertidas."
-    },
-    {
-      "id": 7,
-      "nombre": "José Ramírez",
-      "grado": "Ing. en Diseño Web",
-      "materia": "Diseño web",
-      "imagen": "/assets/img/Profesores/jose.webp",
-      "bio": "Diseñador web con experiencia en front-end y back-end, amante de la creatividad digital."
-    },
-    {
-      "id": 8,
-      "nombre": "Esteban Vargas",
-      "grado": "Doctorado en Química",
-      "materia": "Química",
-      "imagen": "/assets/img/Profesores/esteban.webp",
-      "bio": "Investigador en química orgánica, disfruta los experimentos y el trabajo de laboratorio."
-    },
-    {
-      "id": 9,
-      "nombre": "Fernando López",
-      "grado": "Doctorado en Matemáticas",
-      "materia": "Cálculo 1 y 2",
-      "imagen": "/assets/img/Profesores/fernandoL.webp",
-      "bio": "Profesor apasionado por los números y la resolución de problemas complejos."
-    },
-    {
-      "id": 10,
-      "nombre": "Patricia González",
-      "grado": "Maestría en Computación",
-      "materia": "Matemáticas discretas 1 y 2",
-      "imagen": "/assets/img/Profesores/patricia.webp",
-      "bio": "Experta en estructuras matemáticas, le encanta enseñar lógica y algoritmos de forma práctica."
-    }
-  ],
-  "filtrosData": [
-    "Todos",
-    "Matemáticas",
-    "Algebra",
-    "Calculo",
-    "Física",
-    "Español",
-    "Literatura",
-    "Programación",
-    "Base de datos",
-    "Diseño web",
-    "Biología",
-    "Inglés",
-    "Química"
-  ]
+    "profesoresData": [
+        {
+            "id": 1,
+            "nombre": "Anna Martinez",
+            "grado": "Mestria en Matemáticas",
+            "materia": "Matemáticas, algebra, calculo",
+            "imagen": "/img/Profesores/anna.webp",
+            "bio": "Apasionada por la enseñanza, siempre buscando nuevas metodologías para motivar a los alumnos."
+        },
+
+        {
+            "id": 2,
+            "nombre": "Carlos Hernández",
+            "grado": "Doctorado en Física",
+            "materia": "Física y mecanica elemental 1 y 2",
+            "imagen": "/img/Profesores/carlosH.webp",
+            "bio": "Investigador y docente, disfruta explicar fenómenos complejos de manera sencilla."
+        },
+
+        {
+            "id": 3,
+            "nombre": "Lucía Ramírez",
+            "grado": "Lic. en Letras",
+            "materia": "Español y Literatura",
+            "imagen": "/img/Profesores/luciaR.webp",
+            "bio": "Escritora y amante de la literatura clásica y contemporánea."
+        },
+        {
+            "id": 4,
+            "nombre": "Eduardo Fernández",
+            "grado": "Ing. en Computación",
+            "materia": "Programación, Base de datos y diseño web",
+            "imagen": "/img/Profesores/eduardo.webp",
+            "bio": "Desarrollador de software y profesor con interés en inteligencia artificial y robótica."
+        },
+        {
+            "id": 5,
+            "nombre": "Sofía Torres",
+            "grado": "Lic. en Biología",
+            "materia": "Biología",
+            "imagen": "/img/Profesores/sofiaTo.webp",
+            "bio": "Investigadora en biología molecular, apasionada por la naturaleza."
+        },
+        {
+            "id": 6,
+            "nombre": "Mariana Castillo",
+            "grado": "Lic. en Lenguas",
+            "materia": "Inglés",
+            "imagen": "/img/Profesores/marianaCas.webp",
+            "bio": "Docente dedicada a la enseñanza del inglés con dinámicas innovadoras y divertidas."
+        },
+        {
+            "id": 7,
+            "nombre": "José Ramírez",
+            "grado": "Ing. en Diseño Web",
+            "materia": "Diseño web",
+            "imagen": "/img/Profesores/Jose.webp",
+            "bio": "Diseñador web con experiencia en front-end y back-end, amante de la creatividad digital."
+        },
+        {
+            "id": 8,
+            "nombre": "Esteban Vargas",
+            "grado": "Doctorado en Química",
+            "materia": "Química",
+            "imagen": "/img/Profesores/estebanVargas.webp",
+            "bio": "Investigador en química orgánica, disfruta los experimentos y el trabajo de laboratorio."
+        },
+        {
+            "id": 9,
+            "nombre": "Fernando López",
+            "grado": "Doctorado en Matemáticas",
+            "materia": "Cálculo 1 y 2",
+            "imagen": "/img/Profesores/fernandoL.webp",
+            "bio": "Profesor apasionado por los números y la resolución de problemas complejos."
+        },
+        {
+            "id": 10,
+            "nombre": "Patricia González",
+            "grado": "Maestría en Computación",
+            "materia": "Matemáticas discretas 1 y 2",
+            "imagen": "/img/Profesores/patriciaG.webp",
+            "bio": "Experta en estructuras matemáticas, le encanta enseñar lógica y algoritmos de forma práctica."
+        }
+    ],
+    "filtrosData": [
+        "Todos",
+        "Matemáticas",
+        "Algebra",
+        "Calculo",
+        "Física",
+        "Español",
+        "Literatura",
+        "Programación",
+        "Base de datos",
+        "Diseño web",
+        "Biología",
+        "Inglés",
+        "Química"
+    ]
 }

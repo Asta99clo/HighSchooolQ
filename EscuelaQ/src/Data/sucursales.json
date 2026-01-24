@@ -7,7 +7,11 @@
         "codigoPais": "cl",
         "Correo": "santiago@edumai.com",
         "Teléfono": "+56 2 5555 5555",
-        "img": ["/assets/img/Sucursales/chile.webp","/assets/img/Sucursales/chileE.webp", "/assets/img/Sucursales/chileS.webp" ],
+        "img": [
+            "/img/Sucursales/chile.webp",
+            "/img/Sucursales/chileE.webp",
+            "/img/Sucursales/chileS.webp"
+        ],
         "alt": "Sucursal Santiago Centro en Chile"
     },
     {
@@ -18,7 +22,11 @@
         "codigoPais": "pe",
         "Correo": "lima@edumai.com",
         "Teléfono": "+51 1 555 5555",
-        "img": ["/assets/img/Sucursales/peru.webp", "/assets/img/Sucursales/peruE.webp", "/assets/img/Sucursales/peruS.webp"],
+        "img": [
+            "/img/Sucursales/peru.webp",
+            "/img/Sucursales/peruE.webp",
+            "/img/Sucursales/peruS.webp"
+        ],
         "alt": "Sucursal Lima Norte en Perú"
     },
     {
@@ -29,7 +37,11 @@
         "codigoPais": "ca",
         "Correo": "toronto@edumai.com",
         "Teléfono": "+1 416 555 0123",
-        "img": ["/assets/img/Sucursales/canada.webp", "/assets/img/Sucursales/canadaE.webp", "/assets/img/Sucursales/canadaS.webp"],
+        "img": [
+            "/img/Sucursales/canada.webp",
+            "/img/Sucursales/canadaE.webp",
+            "/img/Sucursales/canadaS.webp"
+        ],
         "alt": "Sucursal Toronto Downtown en Canadá"
     },
     {
@@ -40,7 +52,11 @@
         "codigoPais": "pr",
         "Correo": "sanjuan@edumai.com",
         "Teléfono": "+1 787 555 9876",
-        "img": ["/assets/img/Sucursales/puertoRico.webp", "/assets/img/Sucursales/puertoRicoE.webp","/assets/img/Sucursales/puertoRicoS.webp"],
+        "img": [
+            "/img/Sucursales/puertoRico.webp",
+            "/img/Sucursales/puertoRicoE.webp",
+            "/img/Sucursales/puertoRicoS.webp"
+        ],
         "alt": "Sucursal San Juan Centro en Puerto Rico"
     },
     {
@@ -51,7 +67,11 @@
         "codigoPais": "cz",
         "Correo": "brno@edumai.com",
         "Teléfono": "+420 555 555 555",
-        "img": ["/assets/img/Sucursales/republicaCheca.webp","/assets/img/Sucursales/republicaChecaE.webp","/assets/img/Sucursales/republicaChecaS.webp"],
+        "img": [
+            "/img/Sucursales/republicaCheca.webp",
+            "/img/Sucursales/republicaChecaE.webp",
+            "/img/Sucursales/republicaChecaS.webp"
+        ],
         "alt": "Sucursal Brno Universitaria en República Checa"
     }
 ]

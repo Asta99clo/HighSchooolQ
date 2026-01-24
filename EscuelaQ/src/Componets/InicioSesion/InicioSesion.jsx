@@ -15,10 +15,7 @@ const InicioSesion = () => {
                         onClick={() => navigate('/FormAlumn')}
                     >
                         <div className="img">
-                            <img
-                                src="/assets/img/secciones/imgAlum.webp"
-                                alt=""
-                            />
+                            <img src="/img/secciones/imgAlum.webp" alt="" />
                         </div>
                         <div className="info info-alum">
                             <h3>Estudiante</h3>
@@ -26,10 +23,7 @@ const InicioSesion = () => {
                     </div>
                     <div className="profesor">
                         <div className="img">
-                            <img
-                                src="/assets/img/secciones/imgProf.webp"
-                                alt=""
-                            />
+                            <img src="/img/secciones/imgProf.webp" alt="" />
                         </div>
                         <div className="info info-prof">
                             <h3>Profesor</h3>

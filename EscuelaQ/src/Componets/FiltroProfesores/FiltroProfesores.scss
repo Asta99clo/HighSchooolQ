@@ -1,69 +1,106 @@
 // Ruta: src/Componets/FiltroProfesores/FiltroProfesores.scss
 @use '../../Base/variables' as v;
+@use '../../Base/mixins' as m;
 
 @mixin glass-panel($blur: 10px) {
-  background-color: rgba(v.$colorTextoP, 0.8);
-  backdrop-filter: blur($blur);
-  -webkit-backdrop-filter: blur($blur);
-  border: 1px solid rgba(v.$colorTextoD, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: rgba(v.$colorTextoP, 0.8);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid rgba(v.$colorTextoD, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .profesores-filtros {
-  @include glass-panel(10px);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  position: sticky;
-  top: 100px;
-  height: fit-content;
+    @include glass-panel(10px);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
 
-  /**
+    /**
    * BEM: Elemento 'titulo'.
    * Reemplaza al selector 'h4' genérico.
    */
-  &__titulo {
-    font-size: 1.2rem;
-    color: v.$colorTextoD;
-    margin: 0 0 1rem;
-    font-weight: 600; // Un poco más de peso para el título
-  }
-
-  /**
-   * BEM: Elemento 'btn'.
-   * Reemplaza a la clase '.filtro-btn'.
-   */
-  &__btn {
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: left;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: transparent;
-    color: v.$colorTextoS;
-    
-    transition: background-color 0.2s ease-in-out,
-                color 0.2s ease-in-out,
-                font-weight 0.2s ease-in-out;
-
-    &:hover {
-      background-color: rgba(v.$fondoHover, 0.3);
-      color: v.$colorTextoD;
+    &__titulo {
+        font-size: 1.2rem;
+        color: v.$colorTextoD;
+        margin: 0 0 1rem;
+        font-weight: 600; // Un poco más de peso para el título
     }
 
     /**
+   * BEM: Elemento 'btn'.
+   * Reemplaza a la clase '.filtro-btn'.
+   */
+    &__btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        color: v.$colorTextoS;
+
+        transition:
+            background-color 0.2s ease-in-out,
+            color 0.2s ease-in-out,
+            font-weight 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgba(v.$fondoHover, 0.3);
+            color: v.$colorTextoD;
+        }
+
+        /**
      * Modificador (BEM: &--activo o .active)
      * Se aplica cuando este botón es el filtro activo.
      */
-    &.active {
-      background-color: v.$fondoHeader;
-      color: v.$colorTextoP;
-      font-weight: 600;
+        &.active {
+            background-color: v.$fondoHeader;
+            color: v.$colorTextoP;
+            font-weight: 600;
+        }
     }
-  }
+}
+@include m.telefono {
+    .profesores-filtros {
+        left: 0;
+        top: 80px;
+        height: auto;
+        width: 75%;
+        max-width: 260px;
+        transform: translateX(-97%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+
+        &.is-open {
+            transform: translateX(0);
+        }
+
+        &__contenido {
+            margin-top: 1rem;
+        }
+
+        &__toggle {
+            position: absolute;
+            right: -35px;
+            top: 20px;
+            width: 35px;
+            height: 35px;
+            border-radius: 0 6px 6px 0;
+            border: none;
+            background: v.$fondoHeader;
+            color: v.$colorTextoP;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+    }
 }

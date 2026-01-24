@@ -9,7 +9,9 @@
         "Tipo": "En línea",
         "Ciencia": "Lingüística",
         "Precio": 2500,
-        "Duración": "6 meses"
+        "Duración": "6 meses",
+        "img": "/img/Materias/ingles.webp",
+        "alt": "Imagen ingles básico 1"
     },
     {
         "id": 2,
@@ -21,7 +23,8 @@
         "Tipo": "Presencial",
         "Ciencia": "Lingüística",
         "Precio": 3000,
-        "Duración": "6 meses"
+        "Duración": "6 meses",
+        "img": "/img/Materias/ortografia.webp"
     },
     {
         "id": 3,
@@ -33,7 +36,8 @@
         "Tipo": "En línea",
         "Ciencia": "Ciencias de la Computación",
         "Precio": 6000,
-        "Duración": "5 meses"
+        "Duración": "5 meses",
+        "img": "/img/Materias/programacionConcurrente.webp"
     },
     {
         "id": 4,
@@ -45,7 +49,8 @@
         "Tipo": "Presencial",
         "Ciencia": "Ciencias de la Computación",
         "Precio": 8000,
-        "Duración": "8 meses"
+        "Duración": "8 meses",
+        "img": "/img/Materias/ia.webp"
     },
     {
         "id": 5,
@@ -57,7 +62,8 @@
         "Tipo": "En línea",
         "Ciencia": "Ciencias de la Computación",
         "Precio": 5000,
-        "Duración": "6 meses"
+        "Duración": "6 meses",
+        "img": "/img/Materias/baseRelacionales.webp"
     },
     {
         "id": 6,
@@ -69,7 +75,8 @@
         "Tipo": "En línea",
         "Ciencia": "Ciencias de la Computación",
         "Precio": 7000,
-        "Duración": "7 meses"
+        "Duración": "7 meses",
+        "img": "/img/Materias/baseNoRelacionales.webp"
     },
     {
         "id": 7,
@@ -81,7 +88,8 @@
         "Tipo": "Presencial",
         "Ciencia": "Ciencias Exactas",
         "Precio": 1700,
-        "Duración": "3 meses"
+        "Duración": "3 meses",
+        "img": "/img/Materias/mate1.webp"
     },
     {
         "id": 8,
@@ -93,7 +101,8 @@
         "Tipo": "Presencial",
         "Ciencia": "Ciencias Exactas",
         "Precio": 2000,
-        "Duración": "4 meses"
+        "Duración": "4 meses",
+        "img": "/img/Materias/mate2.webp"
     },
     {
         "id": 9,
@@ -105,7 +114,8 @@
         "Tipo": "En línea",
         "Ciencia": "Ciencias de la Computación",
         "Precio": 3200,
-        "Duración": "4 meses"
+        "Duración": "4 meses",
+        "img": "/img/Materias/disenioWeb.webp"
     },
     {
         "id": 10,
@@ -117,6 +127,7 @@
         "Tipo": "En línea",
         "Ciencia": "Interacción Humano-PC",
         "Precio": 4200,
-        "Duración": "3 meses"
+        "Duración": "3 meses",
+        "img": "/img/Materias/disenioUX.webp"
     }
 ]

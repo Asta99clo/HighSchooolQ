@@ -1,33 +1,32 @@
 @use 'variables' as v;
 
+//creando nuestros mixins- funciones
 
-@mixin telefono{
-    @media (min-width: v.$telefono){
+@mixin telefono {
+    @media (min-width: v.$telefono) and (max-width: calc(v.$tablet - 1px)) {
         @content;
     }
 }
-@mixin tablet{
-    @media (min-width: v.$tablet){
-        @content;
-    }
-}
-@mixin escritorio{
-    @media (min-width: v.$desktop){
+@mixin tablet {
+    @media (min-width: v.$tablet) and (max-width: calc(v.$escritorio - 1px)) {
         @content;
     }
 }
 
-@mixin contenedor{
+@mixin grid($columnas: 1, $gap: 3rem) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}
+
+@mixin contenedor {
     width: 95%;
     max-width: 120rem;
     margin: auto;
 }
 
-@mixin grid($columnas: 1, $gap: 1fr){
+@mixin grid($columnas: 1, $gap: 1fr) {
     display: grid;
     grid-template-columns: repeat($columnas, 1fr);
     gap: $gap;
-    
 }
-
-

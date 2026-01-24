@@ -49,10 +49,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="content-image">
-                    <img
-                        src="../../assets/img/secciones/imgLogin.webp"
-                        alt=""
-                    />
+                    <img src="/img/secciones/imgLogin.webp" alt="" />
                 </div>
             </div>
         </>

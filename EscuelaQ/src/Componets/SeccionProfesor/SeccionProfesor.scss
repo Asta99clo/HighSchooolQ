@@ -1,55 +1,62 @@
 // Ruta: src/Componets/SeccionProfesor/SeccionProfesor.scss
 @use '../../Base/variables' as v;
+@use '../../Base/mixins' as m;
 
 // BEM: Bloque principal
 .seccion-profesor {
-  width: 100%;
-  padding: 0 4%; 
-  margin: 4rem 0;
-  box-sizing: border-box;
-
-  // BEM: Elemento 'container' (el layout principal)
-  &__container {
-    display: grid;
-    // Layout para Desktop: 250px para filtros, el resto para el grid
-    grid-template-columns: 250px 1fr;
-    gap: 2rem;
     width: 100%;
+    padding: 0 4%;
+    margin: 4rem 0;
+    box-sizing: border-box;
 
-    // --- MEJOR PRÁCTICA: Responsive Design ---
-    @media (max-width: 900px) {
-      // En pantallas pequeñas, cambiamos a 1 sola columna.
-      grid-template-columns: 1fr;
-      gap: 3rem; // Damos más espacio vertical
+    // BEM: Elemento 'container' (el layout principal)
+    &__container {
+        display: grid;
+        // Layout para Desktop: 250px para filtros, el resto para el grid
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+        width: 100%;
+
+        // --- MEJOR PRÁCTICA: Responsive Design ---
     }
-  }
 
-  // BEM: Elemento 'grid' (el grid solo para las tarjetas)
- // ... (tu .seccion-profesor y .seccion-profesor__container están bien)
+    // BEM: Elemento 'grid' (el grid solo para las tarjetas)
+    // ... (tu .seccion-profesor y .seccion-profesor__container están bien)
 
- // src/Componets/SeccionProfesor/SeccionProfesor.scss
+    // src/Componets/SeccionProfesor/SeccionProfesor.scss
 
-// ...
-  &__grid {
-    display: grid;
-    
-    // --- LA SOLUCIÓN DINÁMICA (con REM) ---
+    // ...
+    &__grid {
+        display: grid;
 
-    // Usamos 'rem' para el gap
-    gap: 1.5rem; 
+        // --- LA SOLUCIÓN DINÁMICA (con REM) ---
 
-    // Usamos 'rem' para el minmax.
-    // min: 15rem (~240px) - Suficientemente pequeño para que quepan 3.
-    // max: 20rem (~320px) - Límite de estiramiento.
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 17rem));
-    
-    // Dejamos las otras soluciones que ya funcionan
-    justify-content: center; // Centra cuando hay 1 o 2
-    align-items: start;      // Evita el colapso de altura
-    
-    perspective: 1000px;
-  }
-// ...
+        // Usamos 'rem' para el gap
+        gap: 1.5rem;
 
-} 
+        // Usamos 'rem' para el minmax.
+        // min: 15rem (~240px) - Suficientemente pequeño para que quepan 3.
+        // max: 20rem (~320px) - Límite de estiramiento.
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 17rem));
+
+        // Dejamos las otras soluciones que ya funcionan
+        justify-content: center; // Centra cuando hay 1 o 2
+        align-items: start; // Evita el colapso de altura
+
+        perspective: 1000px;
+    }
+    // ...
+}
 // <-- Nota: ¡Ahora sí hay una sola llave de cierre al final!
+
+@include m.telefono {
+    .seccion-profesor {
+        &__container {
+            display: flex;
+            flex-direction: row;
+        }
+        &__grid {
+            transform: translateX(-110px);
+        }
+    }
+}

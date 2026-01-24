@@ -1,32 +1,31 @@
 @use '../../Base/variables' as v;
-@use "sass:color";
+@use 'sass:color';
 
-.cont-footer{
-    background: rgba(v.$colorTextoP, 0.8);
+.cont-footer {
+    background: v.$fondoHeader;
     border-top: 1px solid rgba(v.$fondoHeader, 0.2);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.03);
-    
+
     padding-top: 2rem;
     padding-bottom: 1.5rem;
     margin-top: 4rem;
 
-    .cabecera{
+    .cabecera {
         position: relative;
-        text-align: center;
+
         margin-bottom: 1.5rem;
 
-        .redes{
+        .redes {
             position: static;
             justify-content: center;
-            align-items: center;
-            gap: 1rem;
+            gap: 2rem;
             display: flex;
             flex-direction: row;
-            a{
+            a {
                 border-radius: 50%;
-                border: 2px solid rgba(v.$colorTextoS, 0.3);
+                border: 2px solid rgba(v.$colorTextoD, 0.3);
                 padding: 10px;
                 transition: all 0.3s ease;
                 background-color: transparent;
@@ -36,87 +35,90 @@
                 width: 40px;
                 height: 40px;
 
-                svg{
-                    color: v.$colorTextoS;
+                svg {
+                    color: v.$colorTextoD;
                     width: 18px;
                     height: 18px;
                     transition: color 0.3s ease;
                 }
-                &:hover{
-                    background-color: v.$fondoHeader;
+                &:hover {
+                    background-color: white;
                     border-color: v.$fondoHeader;
                     transform: translateY(-3px);
                     box-shadow: 0 5px 15px rgba(v.$fondoHeader, 0.3);
 
                     svg {
-                        color: v.$colorTextoP;
+                        color: v.$fondoHeader;
                     }
                 }
             }
         }
     }
-    .pie{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 8%;
-            text-align: left;
-            border-top: 1px solid rgba(v.$colorTextoS, 0.1);
+    .pie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
 
-            @media (max-width: 768px) {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-        
-        .info-izq{
+        text-align: left;
+        border-top: 1px solid rgba(v.$colorTextoS, 0.1);
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .info-izq {
             display: flex;
             flex-direction: row;
             gap: 1.5rem;
-            
-            a{
-                color: v.$colorTextoS;
+
+            a {
+                color: v.$colorTextoD;
                 padding: 5px;
                 font-size: 0.95rem;
                 font-weight: 600;
                 text-decoration: none;
                 transition: color 0.2s ease;
 
-                &:hover{
-                    color: v.$fondoHeader;
+                &:hover {
+                    color: white;
                 }
             }
         }
-        .info-central{
-            margin-top: .5rem;
+        .info-central {
+            margin-top: 0.5rem;
             font-size: 0.9rem;
-            color: v.$colorTextoS;
+            color: v.$colorTextoD;
             font-weight: 500;
-            text-align: center;
-            p{ margin: 0; }
-            span{
-                color: v.$fondoHeader;
+            margin-left: -5rem;
+
+            p {
+                margin: 0;
+            }
+            span {
+                color: white;
                 font-weight: 800;
             }
         }
-        .info-der{ 
-            display: flex; 
-            flex-direction: column; 
+        .info-der {
+            display: flex;
+            flex-direction: column;
             align-items: flex-end;
-            margin-bottom: 1rem; 
-            
-            @media (max-width: 768px) { align-items: center; }
+            margin-bottom: 1rem;
 
-            p{
-                margin:0; 
+            @media (max-width: 768px) {
+                align-items: center;
+            }
+
+            p {
+                margin: 0;
                 font-size: 0.9rem;
-                color: v.$colorTextoS; 
-                font-weight: 500; 
-                padding: 2px 0; 
+                color: v.$colorTextoD;
+                font-weight: 500;
+                padding: 2px 0;
             }
         }
-        
     }
-
 }
