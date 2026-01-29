@@ -1,4 +1,5 @@
 @use '../../Base/variables' as v;
+@use '../../Base/mixins' as m;
 
 .cont-form {
     width: 100%;
@@ -75,6 +76,21 @@
                 width: 53%;
                 padding: 0.5rem;
             }
+        }
+    }
+}
+@include m.telefono {
+    .cont-form {
+        .form-alumn {
+            width: 90%;
+        }
+    }
+}
+@include m.tablet {
+    .cont-form {
+        margin-top: -6rem;
+        .form-alumn {
+            width: 90%;
         }
     }
 }

@@ -3,7 +3,7 @@
 @use '../../Base/mixins' as m;
 
 @mixin glass-panel($blur: 10px) {
-    background-color: rgba(v.$colorTextoP, 0.8);
+    background-color: rgba(v.$colorTextoP, 0.2);
     backdrop-filter: blur($blur);
     -webkit-backdrop-filter: blur($blur);
     border: 1px solid rgba(v.$colorTextoD, 0.05);
@@ -18,6 +18,9 @@
     position: sticky;
     top: 100px;
     height: fit-content;
+    &__toggle {
+        opacity: 0;
+    }
 
     /**
    * BEM: Elemento 'titulo'.
@@ -46,7 +49,7 @@
         border: none;
         border-radius: 5px;
         background-color: transparent;
-        color: v.$colorTextoS;
+        color: var(--colorTextoS);
 
         transition:
             background-color 0.2s ease-in-out,
@@ -54,7 +57,8 @@
             font-weight 0.2s ease-in-out;
 
         &:hover {
-            background-color: rgba(v.$fondoHover, 0.3);
+            background-color: var(--fondoHover);
+            opacity: 0.3;
             color: v.$colorTextoD;
         }
 
@@ -90,6 +94,7 @@
 
         &__toggle {
             position: absolute;
+            opacity: 1;
             right: -35px;
             top: 20px;
             width: 35px;

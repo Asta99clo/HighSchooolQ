@@ -93,8 +93,13 @@ const SocialLinks = ({ links }) => {
  */
 const CardFrontFace = ({ profesor, onFlip }) => (
     <div className="card-face card-front">
+        <span className="card-glass"></span>
         <div className="card-front__imagen-cont">
-            <img src={profesor.imagen} alt={`Foto de ${profesor.nombre}`} />
+            <img
+                src={profesor.imagen}
+                alt={`Foto de ${profesor.nombre}`}
+                loading="lazy"
+            />
         </div>
         <div className="card-front__info-cont">
             <h3>{profesor.nombre}</h3>
@@ -115,6 +120,7 @@ const CardFrontFace = ({ profesor, onFlip }) => (
  */
 const CardBackFace = ({ profesor, onUnflip }) => (
     <div className="card-face card-back">
+        <span className="card-glass"></span>
         <div className="card-back__header">
             <h4>Sobre {profesor.nombre?.split(' ')[0]}</h4>
         </div>
@@ -138,7 +144,7 @@ const CardProfesorItem = ({ profesor, index }) => {
 
     const animationDelay = useMemo(
         () => ({
-            animationDelay: `${index * 5}s`,
+            animationDelay: `${index * 0.08}s`,
         }),
         [index]
     );

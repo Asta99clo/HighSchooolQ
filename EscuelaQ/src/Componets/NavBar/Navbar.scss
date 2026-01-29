@@ -1,218 +1,410 @@
 @use '../../Base/variables' as v;
-
+@use '../../Base/mixins' as m;
 
 // el estilo principal del header
 .main-header {
-  width: 100%;
-  background-color: rgba(v.$colorTextoP, 0.8); 
+    width: 100%;
+    background-color: rgb(from v.$colorTextoP r g b / 0.05);
     backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(v.$colorTextoD, 0.05); 
-  position: sticky; 
-  top: 0;
-  z-index: 1000;
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(from v.$colorTextoD r g b / 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 // nav principal
 .main-nav {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 8%; // Consistencia con el Hero
-  height: 80px; 
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 8%; // Consistencia con el Hero
+    height: 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburger,
+.close-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: inherit;
 }
 
 // enlaces
 .nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-
-  > li {
-    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     height: 100%;
 
-    > a {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 0 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: v.$colorTextoS;
-      transition: color 0.2s ease-in-out;
+    > li {
+        position: relative;
+        height: 100%;
 
-      // La línea de acento
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0%;
-        height: 3px;
-        background-color: v.$fondoHeader; 
-        transition: width 0.3s ease;
-      }
+        > a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--colorTextoS);
+            transition: color 0.2s ease-in-out;
 
-      &:hover {
-        color: v.$colorTextoD;
-        &::after {
-          width: 50%;
+            // La línea de acento
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0%;
+                height: 3px;
+                background-color: v.$fondoHeader;
+                transition: width 0.3s ease;
+            }
+
+            &:hover {
+                color: v.$colorTextoD;
+                &::after {
+                    width: 50%;
+                }
+            }
         }
-      }
     }
-  }
 
-  // El Logo
-  .nav-logo-link {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: v.$colorTextoD;
-    
-    .navbar-logo {
-      color: v.$fondoHeader; 
-      margin-right: 0.5rem;
-      width: 28px;
-      height: 28px;
+    // El Logo
+    .nav-logo-link {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: v.$colorTextoD;
+
+        .navbar-logo {
+            color: v.$fondoHeader;
+            margin-right: 0.5rem;
+            width: 28px;
+            height: 28px;
+        }
+
+        &::after {
+            display: none;
+        }
+        &:hover {
+            color: v.$fondoHeader;
+        }
     }
-    
-    &::after { display: none; }
-    &:hover { color: v.$fondoHeader; }
-  }
 }
 
 // el menu estilo dropdown
 .menuVertical {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  
-  // el mismo estilo tipo glass tambien
-  background-color: rgba(v.$colorTextoP, 0.8); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(v.$colorTextoD, 0.05);
-  
-  padding: 0.5rem 0;
-  min-width: 180px;
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.2s ease-out;
+    position: absolute;
+    top: 100%;
+    left: 0;
 
-  li {
-    list-style: none;
-    
-    a {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      color: v.$colorTextoS;
-      font-size: 1rem;
-      font-weight: 500;
-      text-decoration: none;
+    // el mismo estilo tipo glass tambien
+    background-color: rgb(from v.$colorTextoP r g b / 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-      &:hover {
-        color: v.$colorTextoD;
-        background-color: rgba(v.$fondoHover, 0.2);
-      }
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(from v.$colorTextoD r g b / 0.05);
+
+    padding: 0.5rem 0;
+    min-width: 180px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease-out;
+
+    li {
+        list-style: none;
+
+        a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: v.$colorTextoS;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+
+            &:hover {
+                color: v.$colorTextoD;
+                background-color: var(--fondoHover);
+            }
+        }
     }
-  }
 }
 
 .nav-links > li:hover .menuVertical {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 // las acciones del navbar
 .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  .btn-secondary {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.2s ease-in-out;
-    background-color: transparent;
-    border: 2px solid v.$fondoHeader; 
-    color: v.$fondoHeader;
-
-    &:hover {
-      background-color: v.$fondoHeader;
-      color: v.$colorTextoP;
-    }
-  }
-  
-  // el estilo del toggle
-  .btn-toggle {
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 65px;
-    height: 32px;
-    background-color: #eee;
-    border: none;
-    border-radius: 50px;
-    padding: 0 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
-    // El círculo deslizante
-    .toggle-slider {
-      position: absolute;
-      top: 3px;
-      left: 4px;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background-color: v.$fondoHover; 
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-      z-index: 1;
-    }
-    
-    // Iconos
-    .icon-sun, .icon-moon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      .navbar-logo {
-        width: 14px;
-        height: 14px;
-        color: v.$colorTextoP; // Blancos (para verse sobre el círculo)
-      }
-    }
-    
-    // el estilo del estado modo oscuro activo
-    &.active {
-      background-color: v.$fondoBotonS; 
-      
-      .toggle-slider {
-        transform: translateX(31px);
-        background-color: v.$fondoHeader; 
-      }
+    gap: 1rem;
+    margin-bottom: 1rem;
 
-      .icon-sun, .navbar-logo { color: v.$colorTextoD; } // Sol apagado
-      .icon-moon, .navbar-logo { color: v.$colorTextoP; } // Luna encendida
+    .btn-secondary {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+        border: 2px solid v.$fondoHeader;
+        color: v.$fondoHeader;
+
+        &:hover {
+            background-color: v.$fondoHeader;
+            color: v.$colorTextoP;
+        }
     }
-  }
+
+    // el estilo del toggle
+    .btn-toggle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 65px;
+        height: 40px;
+        background-color: #eee;
+        border: none;
+        border-radius: 50px;
+        padding: 0 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        // El círculo deslizante
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            width: 32px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: v.$fondoHover;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 1;
+        }
+
+        // Iconos
+        .icon-sun,
+        .icon-moon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            .navbar-logo {
+                width: 14px;
+                height: 14px;
+                color: v.$colorTextoP; // Blancos (para verse sobre el círculo)
+            }
+        }
+
+        // el estilo del estado modo oscuro activo
+        &.active {
+            background-color: rgba(v.$colorTextoP, 0.2);
+
+            .toggle-slider {
+                transform: translateX(31px);
+                background-color: var(--fondoHover);
+            }
+
+            .icon-sun,
+            .navbar-logo {
+                color: v.$colorTextoD;
+            } // Sol apagado
+            .icon-moon,
+            .navbar-logo {
+                color: v.$colorTextoP;
+            } // Luna encendida
+        }
+    }
+}
+
+@include m.telefono {
+    .main-header {
+        .main-nav {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+
+            .hamburger {
+                display: flex;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                &:hover {
+                    color: v.$fondoHeader;
+                }
+            }
+            .close-menu {
+                display: flex;
+                margin-bottom: 1rem;
+                margin-left: 50%;
+                font-weight: 900;
+                margin-top: -3rem;
+                &:hover {
+                    color: v.$fondoHeader;
+                }
+            }
+
+            .menuVertical {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                min-width: 180px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(10px);
+                transition: all 0.25s ease;
+            }
+
+            li:hover > .menuVertical {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: #fff;
+
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                padding: 4rem 1.5rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+            .nav-links.open {
+                background-color: var(--colorTextoP);
+
+                right: 0;
+            }
+            .nav-links > li {
+                height: auto;
+                margin-bottom: 4rem;
+            }
+            .nav-links > li > a {
+                padding: 0;
+                font-size: 2rem;
+            }
+            .nav-links > li > a::after {
+                left: 0;
+                transform: none;
+                width: 0%;
+                bottom: -2px;
+            }
+
+            .nav-links > li > a:hover::after {
+                width: 100%;
+            }
+            .nav-actions {
+                flex-direction: row;
+            }
+        }
+    }
+}
+@include m.tablet {
+    .main-header {
+        .main-nav {
+            display: flex;
+
+            height: auto;
+            .hamburger {
+                display: flex;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                &:hover {
+                    color: v.$fondoHeader;
+                }
+            }
+            .close-menu {
+                display: flex;
+                margin-bottom: 1rem;
+                margin-left: 50%;
+                font-weight: 900;
+                margin-top: -3rem;
+                &:hover {
+                    color: v.$fondoHeader;
+                }
+            }
+
+            .menuVertical {
+                position: absolute;
+
+                top: 0;
+                left: 100%;
+                min-width: 180px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(10px);
+                transition: all 0.25s ease;
+            }
+
+            li:hover > .menuVertical {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: #fff;
+
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                padding: 4rem 1.5rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+            .nav-links.open {
+                right: 0;
+            }
+            .nav-links > li {
+                height: auto;
+                margin-bottom: 4rem;
+            }
+            .nav-links > li > a {
+                padding: 0;
+                font-size: 2rem;
+            }
+            .nav-links > li > a::after {
+                left: 0;
+                transform: none;
+                width: 0%;
+                bottom: -2px;
+            }
+
+            .nav-links > li > a:hover::after {
+                width: 100%;
+            }
+            .nav-actions {
+                flex-direction: row;
+            }
+        }
+    }
 }

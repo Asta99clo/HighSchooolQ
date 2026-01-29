@@ -4,6 +4,13 @@
 *::after {
     box-sizing: border-box;
 }
+body {
+    background: var(--bgMain);
+}
+html,
+body {
+    overflow-x: hidden;
+}
 
 a {
     text-decoration: none;
@@ -27,4 +34,15 @@ li {
         background-color: v.$fondoHeader;
         color: v.$colorTextoP;
     }
+}
+body {
+    background: var(--bgMain);
+    backface-visibility: hidden;
+}
+
+.section-sucursal,
+.cont-sucursal,
+.contenido-sucursal-info {
+    will-change: transform;
+    transform: translateZ(0);
 }

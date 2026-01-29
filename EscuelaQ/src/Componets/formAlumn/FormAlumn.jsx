@@ -1,8 +1,10 @@
 import './FormAlumn.scss';
+import NavBar from '../NavBar/NavBar';
 
 const FormAlumn = () => {
     return (
         <>
+            <NavBar></NavBar>
             <section className="cont-form">
                 <div className="form-alumn">
                     <h3> Crear cuenta Estudiante</h3>

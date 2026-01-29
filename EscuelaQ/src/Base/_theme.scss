@@ -1,0 +1,37 @@
+@use './variables' as v;
+
+:root {
+    --fondoHeader: #{v.$fondoHeader};
+    --fondoHeader-rgb: 56, 189, 248;
+
+    --fondoBotonP: #{v.$fondoBotonP};
+    --fondoBotonP-rgb: 251, 113, 133;
+
+    --fondoBotonS: #{v.$fondoBotonS};
+    --fondoBotonS-rgb: 253, 230, 138;
+
+    --fondoHover: #{v.$fondoHover};
+    --fondoHover-rgb: 255, 209, 102;
+    --colorTextoS: #{v.$colorTextoS};
+    --colorTextoSdegradado: #{v.$colorTextoSdegradado};
+    --colorTextoP: #{v.$colorTextoP};
+    --colorTextoD: #{v.$colorTextoD};
+    --bgMain: #ffffff;
+}
+
+body.dark-mode {
+    --fondoHeader: #38bdf8;
+    --fondoBotonP: #a78bfa;
+    --fondoBotonS: #fde68a;
+    --fondoHover: #a78bfa;
+
+    --colorTextoS: #f9f9f9;
+    --colorTextoSdegradado: #94a3b8;
+    --colorTextoP: #28292e;
+    --colorTextoD: #28292e;
+    --fondoHeader-rgb: 56, 189, 248;
+    --fondoBotonP-rgb: 251, 113, 133;
+    --fondoBotonS-rgb: 253, 230, 138;
+    --fondoHover-rgb: 167, 139, 250;
+    --bgMain: #28292e;
+}

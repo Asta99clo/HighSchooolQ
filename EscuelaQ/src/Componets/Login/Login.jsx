@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../NavBar/NavBar';
 import './Login.scss';
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
     };
     return (
         <>
+            <NavBar></NavBar>
             <div className="content-form">
                 <div className="login-section">
                     <h1>Iniciar sesión</h1>

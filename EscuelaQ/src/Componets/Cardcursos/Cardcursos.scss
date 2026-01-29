@@ -89,7 +89,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: rgba(v.$colorTextoP, 0.8);
+    background-color: rgba(v.$colorTextoP, 0.2);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(v.$colorTextoP, 0.5);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -217,7 +217,7 @@
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 1px;
-            color: v.$colorTextoS;
+            color: var(--colorTextoS);
             background: rgba(0, 0, 0, 0.04);
             padding: 4px 10px;
             border-radius: 20px;
@@ -234,7 +234,7 @@
 
         .descripcion {
             font-size: 0.9rem;
-            color: v.$colorTextoS;
+            color: var(--colorTextoS);
             margin-bottom: 1.5rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -245,7 +245,7 @@
         .meta-data {
             display: flex;
             justify-content: space-around;
-            background: rgba(v.$fondoHeader, 0.05);
+            background: rgba(var(--fondoHover-rgb), 0.2);
             border-radius: 12px;
             padding: 0.8rem;
             margin-bottom: 1.5rem;
@@ -255,7 +255,7 @@
                 flex-direction: column;
                 .label {
                     font-size: 0.8rem;
-                    color: v.$colorTextoS;
+                    color: var(--colorTextoS);
                 }
                 .value {
                     font-weight: 700;
@@ -263,7 +263,7 @@
                     font-size: 0.9rem;
                 }
                 .value.highlight {
-                    color: v.$fondoBotonS;
+                    color: var(--colorTextoD);
                 }
             }
         }
@@ -271,7 +271,7 @@
         .profesor-info {
             margin-bottom: 1.5rem;
             font-size: 0.85rem;
-            color: v.$colorTextoS;
+            color: var(--colorTextoS);
             span {
                 font-weight: 600;
                 color: v.$colorTextoD;
@@ -310,6 +310,25 @@
 }
 
 @include m.telefono {
+    .carousel-container {
+        padding: 0;
+    }
+    .carousel-track {
+        padding: 2rem 1rem;
+        gap: 1rem;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+        touch-action: pan-x;
+    }
     .curso-card {
+        width: 85vw;
+        scroll-snap-align: center;
+        flex: 0 0 auto;
+    }
+    .nav-btn {
+        display: none;
     }
 }

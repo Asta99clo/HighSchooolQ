@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import './CardCursos.scss';
 import cursosData from '../../Data/materias.json';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import HeaderProfesor from '../HeaderProfesor/HeaderProfesor';
 
 // Imágenes de ejemplo (optimizadas en tamaño para demo)
@@ -36,6 +39,7 @@ const getTheme = (ciencia) => {
 
 const Cardcursos = () => {
     const carouselRef = useRef(null);
+    const location = useLocation();
 
     // Lógica de movimiento suave (Smooth Scroll)
     const scrollLeft = () => {
@@ -58,8 +62,27 @@ const Cardcursos = () => {
         }
     };
 
+    useEffect(() => {
+        const cursoNav = location.state?.curso;
+        if (!cursoNav || !carouselRef.current) return;
+
+        const cards = carouselRef.current.children;
+        const index = [...cards].findIndex((card) =>
+            card.innerText.includes(cursoNav)
+        );
+
+        if (index >= 0) {
+            const card = cards[index];
+            card.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest',
+            });
+        }
+    }, [location.state]);
+
     return (
-        <section className="cursos-wrapper">
+        <section className="cursos-wrapper" id="Cursos">
             <HeaderProfesor
                 title="Nuestros Cursos"
                 description="Explora nuestra oferta académica diseñada para tu futuro."
